@@ -2,6 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './screens/HomeScreen';
 import ContentsEntryScreen from './screens/ContentsEntryScreen';
 import HomeEntryScreen from './screens/HomeEntryScreen';
@@ -21,11 +22,6 @@ export default function App() {
         <Tab.Screen name="Home" component={HomeScreen} options={{
           tabBarIcon: ({ color, size }) => (
             <FontAwesome5 name="home" size={size} color={color} />
-          )  
-        }}/>
-        <Tab.Screen name="Details" component={DetailsScreen} options={{
-          tabBarIcon: ({ color, size }) => (
-            <FontAwesome5 name="door-open" size={size} color={color} />
           )  
         }}/>
         <Tab.Screen name="Home Entry Screen" component={HomeEntryScreen} options={{

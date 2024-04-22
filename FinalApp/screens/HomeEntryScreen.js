@@ -1,7 +1,24 @@
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
-import React, { useState } from 'react';
+import { Button, StyleSheet, Text, TextInput, View, TouchableOpacity } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const HomeEntryScreen = () => {
+  const saveAddr = async () => {
+    try {
+      await AsyncStorage.setItem("Address", Addr);
+    } catch (err) {
+        alert(err);
+    }
+  };
+
+  const savesqft = async () => {
+    try {
+      await AsyncStorage.setItem("sqft", Sqft);
+    } catch (err) {
+        alert(err);
+    }
+  };
+
   const [Addr, setAddress] = useState(' ');
   const [Sqft, setsqft] = useState(' ');
   const [Ins, setIns] = useState(' ');
@@ -11,7 +28,6 @@ const HomeEntryScreen = () => {
     return (
     <View style={styles.container}>
       <Text> </Text>
-      <Text>Home Details </Text>
       <Text>Enter Insurance Company:</Text>
       <TextInput
       style={styles.inputStyle}
@@ -31,7 +47,7 @@ const HomeEntryScreen = () => {
       style={styles.inputStyle}
       keyboardType='numeric'
       placeholder='Square Footage'
-      onChangeText={(item)=>setsqft(item)}/>
+      onChangeText={savesqft}/>
       <Text> </Text>
 
       <Text>Enter Number of Bathrooms:</Text>
@@ -57,26 +73,30 @@ const HomeEntryScreen = () => {
       placeholder='Living Areas'
       onChangeText={(item)=>setLiving(item)}/>
       <Text> </Text>
-      
-      
+     
+      <TouchableOpacity style={styles.button} onPress={() => saveAddr()}>
+        <Text style={{ color: "white" }}>Submit</Text>
+      </TouchableOpacity>
+  
       <Text>Insurance Company: {Ins} </Text>
       <Text>Address: {Addr} </Text>
       <Text>Square Footage: {Sqft} </Text>
       <Text>Bedrooms: {Bed} </Text>
       <Text>Bathrooms: {Bath} </Text>
       <Text>Living Areas: {Living} </Text>
-
+      
     </View>
     
   );
 }
+
 export default HomeEntryScreen
 
   const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#fff',
-      margin: 10,
+      margin: 5,
     },
     inputStyle:{
       borderWidth: 1,
@@ -84,6 +104,14 @@ export default HomeEntryScreen
       padding: 8,
       margin: 10,
       width: 200,
-      alignItems: 'center'
+    },
+    button:{
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingVertical: 12,
+        paddingHorizontal: 32,
+        borderRadius: 4,
+        elevation: 3,
+        backgroundColor: 'green',
     }
 });
