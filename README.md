@@ -1,0 +1,3 @@
+This is a mobile app using react native with Expo for Tech for Mobile Apps for MSIT degree at University of Cincinnati
+Link to Github repository zip file - https://mailuc-my.sharepoint.com/:u:/g/personal/howar2ch_mail_uc_edu/ES8cJkAeKQFDoz5-qSSaR1gBlL72eup2LJGvA7W-EPGfcA?e=zGAx4V
+Link to Video Presentation - https://mailuc-my.sharepoint.com/:v:/g/personal/howar2ch_mail_uc_edu/EVoHvi9EsdtBixdcU9NbV5kBEIUDD7qO2HFzbfF-KvKzuw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=UXdc7S
